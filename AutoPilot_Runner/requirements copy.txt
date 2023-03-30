@@ -1,0 +1,4 @@
+python-socketio==5.5.2
+keras==2.9.0
+numpy==1.21.2
+opencv_python==4.5.4.58
