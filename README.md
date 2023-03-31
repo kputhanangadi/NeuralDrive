@@ -32,6 +32,16 @@ python train_model.py --data_path /path/to/training/data
 2. Place the car on a track and watch it drive autonomously
 3. Adjust the model's parameters as needed to improve performance
 
+## Contributing
+
+If you'd like to contribute to the development of this application, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch for your feature or bug fix
+3. Make your changes and commit them
+4. Push your changes to your fork
+5. Create a pull request
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
