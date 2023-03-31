@@ -1,6 +1,6 @@
-# [AutoPilot] Project
+# NeuralDrive
 
-This project is focused on creating a self-driving car using the PiCar platform and a machine learning neural network model.
+This project is focused on creating a self-driving car using the PiCar platform applying a machine-learning neural network model to sustain autonomous driving capabilities on a mapped track.
 
 ## Features
 
