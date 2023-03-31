@@ -23,7 +23,7 @@ git clone `https://github.com/kputhanangadi/autopilot-project.git`
 2. Install the necessary dependencies
 You can install all the dependencies for this class by typing `pip install -r requirements.txt`
 3. Train the neural network model using your own data
-python train_model.py --data_path /path/to/training/data
+`python train_model.py --data_path /path/to/training/data`
 4. Integrate the model with the PiCar's software
 
 ## Usage
