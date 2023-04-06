@@ -3,7 +3,7 @@
 This project is focused on creating a self-driving car using the PiCar platform applying a machine-learning neural network model to sustain autonomous driving capabilities on a mapped track.
 
 ## Click Below For Demo Video
-[![Everything Is AWESOME](https://i.imgur.com/ih3pjVu.png)](https://youtu.be/0TQXyrXcrts "Neural Drive Demo")
+[![NeuralDrive](https://i.imgur.com/ih3pjVu.png)](https://youtu.be/0TQXyrXcrts "Neural Drive Demo")
 
 ## Features
 
