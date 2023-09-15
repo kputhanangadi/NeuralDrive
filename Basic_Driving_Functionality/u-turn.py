@@ -1,6 +1,4 @@
-# first we import socketio we use this to connect to the PiCar
 import socketio 
-# next we import time we will use this to delay the code
 import time
 
 # create a socketio object
@@ -9,10 +7,11 @@ import time
 # Over the internet. 
 sio = socketio.Client()
 
-# we try to connect to the PiCar
+# try to connect to the PiCar
 try:
     sio.connect('http://192.168.0.10:3000')
-# if we fail we print out an error message and exit the program
+    
+# print out an error message and exit the program
 except:
     print("Failed to connect to PiCar")
     print("Check that your laptop is connected to the PiCar network")
