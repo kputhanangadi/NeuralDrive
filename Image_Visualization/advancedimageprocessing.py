@@ -1,4 +1,3 @@
-# create a while loop to get and display the video
 while True:
     
     # get the next frame from the video stored in frame
