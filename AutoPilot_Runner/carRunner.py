@@ -82,7 +82,7 @@ def predictSteering(sio, model_name):
 
         maskref = deepcopy(mask)
 
-            # check dsize of mask
+        # check dsize of mask
         try:
             maskref = cv.resize(maskref, (100, 66))
             maskref = np.array(maskref)
@@ -92,29 +92,34 @@ def predictSteering(sio, model_name):
             sys.stdout.write("\rSent steering value: %s      " % round(steering, 2))
             sys.stdout.flush()
         except:
-            # print the exeption 
+            # print the exception 
             print(sys.exc_info()[0])
             print("Prediction Error")
             continue
 
 def imageProcessing(frame):
-    # we get the trackbar values
+    # trackbar values
     hl = cv.getTrackbarPos('Hue Lower', 'Controls')
     sl = cv.getTrackbarPos('Sat Lower', 'Controls')
     vl = cv.getTrackbarPos('Val Lower', 'Controls')
     hu = cv.getTrackbarPos('Hue Upper', 'Controls')
     su = cv.getTrackbarPos('Sat Upper', 'Controls')
     vu = cv.getTrackbarPos('Val Upper', 'Controls')
-    # we convert the frame to the HSV color space
+    
+    # convert the frame to the HSV color space
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+    
     # blur the image to remove noise
     blur = cv.GaussianBlur(hsv, (5, 5), 0)
-    ## mask the image to get only the desired colors
+    
+    # mask the image to get only the desired colors
     mask = cv.inRange(blur, (hl, sl, vl), (hu, su, vu))
-    ## we erode and dilate to remove noise
+    
+    # erode and dilate to remove noise
     erode = cv.erode(mask, np.ones((5, 5), np.uint8), iterations=1)
     dilate = cv.dilate(erode, np.ones((5, 5), np.uint8), iterations=1)
-    # we smooth the image with some gaussian blur
+    
+    # smooth the image with some gaussian blur
     blur = cv.GaussianBlur(dilate, (5, 5), 0)
 
     return blur
@@ -138,6 +143,7 @@ def addControls():
     cv.createTrackbar('Val Upper', 'Controls', 245, 255, null)
 
     cv.createTrackbar('Speed', 'Controls', 0, 100, updateSpeed)
+    
 def printInfo(cap, ip):
     print("----------------------------- Car Information ----------------------------")
     print("Camera FPS:", cap.get(cv.CAP_PROP_FPS))
@@ -149,11 +155,11 @@ def printInfo(cap, ip):
     print("----------------------------- Sending Commands ---------------------------")
 
 def tryConnect(ip):
-    # we try to connect to the PiCar
+    # connect to the PiCar
     sio = socketio.Client()
+    
     try:
         sio.connect('http://%s:3000' % ip)
-    # if we fail we print out an error message and exit the program
     except:
         print("Failed to connect to PiCar Socket Error")
         print("Check that your laptop is connected to the PiCar network")
@@ -175,7 +181,7 @@ def printConfig(args):
     print("--------------------------------------------------------------------------")
 
 def printBanner():
-    # print raw string
+    # print out raw string
     print(r"""
        ____ ___ ____             ____                              
       |  _ \_ _/ ___|__ _ _ __  |  _ \ _   _ _ __  _ __   ___ _ __ 
